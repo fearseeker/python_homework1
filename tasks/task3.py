@@ -15,10 +15,18 @@ def date(d,wd,rd,time):
         i+=1
     return result
 
+while True:
+    try:
+        d = int(input("введить дні: "))
+        wd = int(input("введить кількість робочих днів: "))
+        rd = int(input("введить кількість вихідних: "))
+        if d <= 0 or wd <= 0 or rd <= 0:
+            print("Днів не може бути 0 або меньше 0")
+            continue
+        break
+    except ValueError:
+        print("Введить ціле число")
 
-d = int(input("введить дні: "))
-wd = int(input("введить кількість робочих днів: "))
-rd = int(input("введить кількість вихідних: "))
 time = datetime.date(year= int(input("введить рік: ")), month = int((input("введить місяць: "))), day = int(input("введить день: ")))
 for l in date(d,wd,rd,time):
     print(l)
